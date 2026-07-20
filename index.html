@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDX Ascend Lighting | Permanent Lighting, Portland OR</title>
+<meta name="description" content="Permanent, app-controlled architectural and holiday lighting for Portland homes. Track lighting installed once, enjoyed all year. Free quotes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep: #0B0F22;
+    --navy-mid: #161C3B;
+    --navy-panel: #1D2447;
+    --amber: #F2A94E;
+    --amber-soft: #F6C685;
+    --copper: #C9702E;
+    --ivory: #F5F0E6;
+    --slate: #98A0BE;
+    --line: rgba(242,169,78,0.16);
+    --max: 1160px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--navy-deep);
+    color: var(--ivory);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1,h2,h3,.display{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .eyebrow{
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--amber);
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width: var(--max); margin: 0 auto; padding: 0 28px;}
+  section{padding: 96px 0;}
+  @media(max-width:720px){ section{padding: 64px 0;} }
+
+  /* ---------- NAV ---------- */
+  header{
+    position: fixed; top:0; left:0; right:0; z-index: 100;
+    background: rgba(11,15,34,0.72);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height: 76px;
+  }
+  .logo{
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.15rem;
+    letter-spacing: 0.02em;
+    display:flex; align-items:center; gap:10px;
+  }
+  .logo-img{ height: 40px; width:auto; display:block; }
+  .nav-links{ display:flex; align-items:center; gap:34px; font-size:0.92rem; }
+  .nav-links a{ color: var(--slate); transition: color .2s; }
+  .nav-links a:hover{ color: var(--ivory); }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding: 13px 26px; border-radius: 3px;
+    font-size:0.88rem; font-weight:600; letter-spacing:0.02em;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    border: 1px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{
+    background: linear-gradient(180deg, var(--amber), var(--copper));
+    color: #1a0f02;
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px -6px rgba(242,169,78,0.45); }
+  .btn-ghost{
+    border-color: var(--line); color: var(--ivory);
+  }
+  .btn-ghost:hover{ border-color: var(--amber); color: var(--amber); }
+  .nav-cta{ display:flex; align-items:center; gap:18px; }
+  .nav-phone{ display:none; font-size:0.88rem; color: var(--slate); }
+  @media(min-width:900px){ .nav-phone{ display:inline; } }
+  .menu-toggle{ display:none; background:none; border:none; color:var(--ivory); font-size:1.4rem; }
+  @media(max-width:800px){
+    .nav-links{ display:none; }
+    .menu-toggle{ display:block; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding-top: 190px;
+    padding-bottom: 90px;
+    background:
+      linear-gradient(180deg, rgba(11,15,34,0.55), rgba(11,15,34,0.88) 70%, var(--navy-mid) 100%),
+      url('images/images/hero-stone-warmwhite.jpg') center 30%/cover no-repeat;
+    overflow:hidden;
+  }
+  .hero-grid{
+    max-width: 640px;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+    line-height: 1.08;
+    color: var(--ivory);
+  }
+  .hero h1 em{ color: var(--amber); font-style: italic; }
+  .hero p.lead{
+    margin-top:22px; font-size:1.08rem; color: var(--slate); max-width: 46ch;
+  }
+  .hero-ctas{ display:flex; gap:16px; margin-top:34px; flex-wrap:wrap; }
+  .trust-bar{
+    margin-top:44px; display:flex; gap:28px; flex-wrap:wrap;
+    font-size:0.82rem; color: var(--slate);
+  }
+  .trust-bar span{ display:flex; align-items:center; gap:8px; }
+  .trust-bar .dot{ width:5px; height:5px; border-radius:50%; background:var(--amber); }
+
+  /* Signature SVG house */
+  .house-wrap{ position:relative; }
+  .house-wrap svg{ width:100%; height:auto; }
+  .roofline{
+    fill:none; stroke: var(--amber);
+    stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
+    filter: drop-shadow(0 0 6px rgba(242,169,78,0.85));
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: draw 2.6s ease forwards 0.4s;
+  }
+  .house-outline{ fill:none; stroke: rgba(245,240,230,0.22); stroke-width:1.4; }
+  .house-fill{ fill: var(--navy-panel); opacity:0.9; }
+  .sky-dot{ fill: var(--amber-soft); opacity:0; animation: twinkle 3.5s ease-in-out infinite; }
+  .sky-dot:nth-child(2){ animation-delay: 0.6s; }
+  .sky-dot:nth-child(3){ animation-delay: 1.4s; }
+  @keyframes draw{ to{ stroke-dashoffset: 0; } }
+  @keyframes twinkle{ 0%,100%{opacity:0;} 50%{opacity:0.9;} }
+  @media (prefers-reduced-motion: reduce){
+    .roofline{ animation:none; stroke-dashoffset:0; }
+    .sky-dot{ animation:none; opacity:0.6; }
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-head{ max-width: 600px; margin-bottom: 52px; }
+  .section-head h2{ font-size: clamp(1.7rem, 3vw, 2.3rem); margin-top:10px; }
+  .section-head p{ color: var(--slate); margin-top:14px; font-size:1rem; }
+
+  /* ---------- WHY CHOOSE (cards) ---------- */
+  .card-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:22px; }
+  @media(max-width:900px){ .card-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:520px){ .card-grid{ grid-template-columns: 1fr; } }
+  .card{
+    background: var(--navy-panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px 24px;
+    box-shadow: 0 18px 40px -24px rgba(0,0,0,0.65);
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{ transform: translateY(-4px); border-color: rgba(242,169,78,0.4); box-shadow: 0 22px 44px -20px rgba(242,169,78,0.18); }
+  .card .num{ font-family:'Fraunces',serif; font-style:italic; color:var(--amber); font-size:1.4rem; }
+  .card h3{ font-size:1.05rem; margin-top:14px; font-weight:600; font-family:'Inter',sans-serif; }
+  .card p{ color: var(--slate); font-size:0.9rem; margin-top:10px; }
+
+  /* ---------- SERVICES ---------- */
+  .services{ background: var(--navy-mid); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .service-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:24px; }
+  @media(max-width:860px){ .service-grid{ grid-template-columns:1fr; } }
+  .service-card{
+    padding: 32px 26px; border-radius:8px;
+    background: linear-gradient(160deg, rgba(242,169,78,0.06), transparent 60%), var(--navy-panel);
+    border:1px solid var(--line);
+    box-shadow: 0 18px 40px -24px rgba(0,0,0,0.65);
+    transition: transform .25s ease, border-color .25s ease;
+  }
+  .service-card:hover{ transform: translateY(-4px); border-color: rgba(242,169,78,0.35); }
+  .service-card .eyebrow{ display:block; margin-bottom:10px; }
+  .service-card h3{ font-size:1.3rem; }
+  .service-card p{ color: var(--slate); margin-top:12px; font-size:0.93rem; }
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{
+    display:grid; grid-template-columns: repeat(3,1fr); gap:16px;
+  }
+  @media(max-width:760px){ .gallery-grid{ grid-template-columns: repeat(2,1fr); } }
+  .gallery-item{
+    aspect-ratio: 4/3;
+    border-radius:6px;
+    border: 1px dashed var(--line);
+    background: var(--navy-panel);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; color: var(--slate); font-size:0.8rem; padding: 14px;
+  }
+  .gallery-item span{ color: var(--amber); }
+  .gallery-photo{
+    border-radius:6px; overflow:hidden; border:1px solid var(--line);
+    background: var(--navy-panel); transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .gallery-photo:hover{ transform: translateY(-4px); box-shadow: 0 22px 44px -20px rgba(0,0,0,0.6); }
+  .gallery-photo img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; transition: transform .5s ease; }
+  .gallery-photo:hover img{ transform: scale(1.06); }
+  .gallery-photo figcaption{
+    padding:10px 12px; font-size:0.8rem; color: var(--slate);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 30px; counter-reset: step; }
+  @media(max-width:820px){ .process-grid{ grid-template-columns:1fr; } }
+  .process-step{ position:relative; padding-top: 6px; }
+  .process-step .step-num{
+    font-family:'Fraunces',serif; font-style:italic; font-size:2.6rem; color: var(--amber);
+    opacity:0.85;
+  }
+  .process-step h3{ margin-top:8px; font-size:1.1rem; }
+  .process-step p{ color: var(--slate); margin-top:8px; font-size:0.92rem; }
+
+  /* ---------- FEATURES ---------- */
+  .features{ background: var(--navy-mid); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .feature-list{ display:grid; grid-template-columns: repeat(3,1fr); gap: 18px 28px; margin-top:10px; }
+  @media(max-width:760px){ .feature-list{ grid-template-columns: 1fr 1fr; } }
+  @media(max-width:480px){ .feature-list{ grid-template-columns: 1fr; } }
+  .feature-item{ display:flex; align-items:flex-start; gap:12px; font-size:0.94rem; }
+  .feature-item .ico{ color: var(--amber); font-size:1.1rem; margin-top:1px; }
+  .features-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:48px; align-items:center; }
+  @media(max-width:820px){ .features-grid{ grid-template-columns:1fr; } }
+  .fixture-photo{ position:relative; border-radius:8px; overflow:hidden; border:1px solid var(--line); }
+  .fixture-photo img{ width:100%; display:block; }
+  .fixture-caption{
+    position:absolute; left:0; right:0; bottom:0; padding:14px 16px;
+    background: linear-gradient(0deg, rgba(11,15,34,0.9), transparent);
+    font-size:0.78rem; color: var(--slate);
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .review-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:22px; }
+  @media(max-width:760px){ .review-grid{ grid-template-columns:1fr; } }
+  .review-card{
+    position:relative;
+    padding:30px 28px 26px; border-radius:8px; background: var(--navy-panel);
+    border:1px solid var(--line);
+    box-shadow: 0 18px 40px -22px rgba(0,0,0,0.6);
+    transition: transform .25s ease, border-color .25s ease;
+  }
+  .review-card:hover{ transform: translateY(-3px); border-color: rgba(242,169,78,0.35); }
+  .review-card .stars{ color: var(--amber); letter-spacing:2px; font-size:0.9rem; }
+  .review-card p{ margin-top:14px; color: var(--ivory); opacity:0.88; font-size:0.94rem; line-height:1.65; }
+  .review-card .who{ margin-top:18px; font-size:0.82rem; color: var(--amber); font-weight:600; letter-spacing:0.02em; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+  @media(max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:36px; } }
+  .contact-info p{ color: var(--slate); margin-top: 14px; max-width: 40ch; }
+  .contact-list{ margin-top:28px; display:flex; flex-direction:column; gap:14px; font-size:0.95rem; }
+  .contact-list a{ color: var(--ivory); border-bottom: 1px solid var(--line); padding-bottom:2px; transition: color .2s, border-color .2s; }
+  .contact-list a:hover{ color: var(--amber); border-color: var(--amber); }
+  .service-area{ margin-top:28px; font-size:0.85rem; color: var(--slate); max-width:42ch; }
+  form{ display:flex; flex-direction:column; gap:14px; }
+  .form-row{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+  @media(max-width:480px){ .form-row{ grid-template-columns:1fr; } }
+  input, textarea{
+    background: var(--navy-panel); border:1px solid var(--line); border-radius:4px;
+    padding: 13px 14px; color: var(--ivory); font-family:'Inter',sans-serif; font-size:0.92rem;
+  }
+  input::placeholder, textarea::placeholder{ color: #6b7291; }
+  input:focus, textarea:focus{ outline:2px solid var(--amber); outline-offset:1px; }
+  textarea{ resize: vertical; min-height:110px; }
+  form .btn{ margin-top:6px; align-self:flex-start; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ border-top:1px solid var(--line); padding: 48px 0 32px; }
+  .footer-grid{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+  }
+  .footer-social{ display:flex; gap:16px; }
+  .footer-social a{
+    width:36px; height:36px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; font-size:0.9rem;
+    color: var(--slate); transition: color .2s, border-color .2s;
+  }
+  .footer-social a:hover{ color: var(--amber); border-color: var(--amber); }
+  .footer-note{ font-size:0.78rem; color:#5b6188; margin-top:20px; text-align:center; }
+
+  .reveal{ opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  .card-grid .reveal:nth-child(2), .service-grid .reveal:nth-child(2), .gallery-grid .reveal:nth-child(2), .review-grid .reveal:nth-child(2), .process-grid .reveal:nth-child(2){ transition-delay: .08s; }
+  .card-grid .reveal:nth-child(3), .service-grid .reveal:nth-child(3), .gallery-grid .reveal:nth-child(3), .review-grid .reveal:nth-child(3), .process-grid .reveal:nth-child(3){ transition-delay: .16s; }
+  .card-grid .reveal:nth-child(4), .gallery-grid .reveal:nth-child(4), .review-grid .reveal:nth-child(4){ transition-delay: .24s; }
+  .gallery-grid .reveal:nth-child(5){ transition-delay: .32s; }
+  .gallery-grid .reveal:nth-child(6){ transition-delay: .4s; }
+  header{ transition: box-shadow .3s ease; }
+  header.scrolled{ box-shadow: 0 12px 30px -18px rgba(0,0,0,0.7); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="logo">
+      <img src="images/images/logo.png" alt="PDX Ascend Lighting" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="#why">Why Us</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <span class="nav-phone">(360) 836-0572</span>
+      <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Permanent &amp; Architectural Lighting · Portland, OR</span>
+        <h1>Your home's outline, <em>lit</em> for every season.</h1>
+        <p class="lead">Track lighting, year-round holiday displays, and architectural accents — installed once by PDX Ascend Lighting, controlled from your phone, and enjoyed 365 days a year.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+          <a href="#gallery" class="btn btn-ghost">See Our Work</a>
+        </div>
+        <div class="trust-bar">
+          <span><span class="dot"></span> Licensed &amp; insured</span>
+          <span><span class="dot"></span> 5-year warranty</span>
+          <span><span class="dot"></span> 6+ years serving Portland &amp; Vancouver</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>Built for Portland homes, built to last.</h2>
+        <p>We treat every install like it's our own house — clean lines, quality fixtures, and a crew that shows up on time.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card reveal">
+          <div class="num">01</div>
+          <h3>Quality fixtures</h3>
+          <p>Weatherproof, PDX-winter-tested materials built for the Pacific Northwest — not the cheapest bulk import.</p>
+        </div>
+        <div class="card reveal">
+          <div class="num">02</div>
+          <h3>Local install crew</h3>
+          <p>No subcontracted strangers — our own trained team handles every project from start to finish.</p>
+        </div>
+        <div class="card reveal">
+          <div class="num">03</div>
+          <h3>Licensed &amp; insured</h3>
+          <p>Fully licensed and insured, so you can hire with confidence and total peace of mind.</p>
+        </div>
+        <div class="card reveal">
+          <div class="num">04</div>
+          <h3>5-year warranty</h3>
+          <p>Every install is backed for five years — if something's off, we make it right, no runaround.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What We Install</span>
+        <h2>Three ways to light up your home.</h2>
+      </div>
+      <div class="service-grid">
+        <div class="service-card reveal">
+          <span class="eyebrow">01 / Track Lighting</span>
+          <h3>Permanent Track Lighting</h3>
+          <p>Discreet, low-profile track lighting mounted along your eaves and trim — there year-round, invisible by day, striking at night.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="eyebrow">02 / Holiday Lighting</span>
+          <h3>Year-Round Holiday Lighting</h3>
+          <p>Switch from everyday warm white to full holiday color with a tap. No ladders, no re-hanging strands every December.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="eyebrow">03 / Architectural</span>
+          <h3>Architectural Accent Lighting</h3>
+          <p>Highlight rooflines, columns, and landscaping features with lighting designed around your home's actual architecture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Work</span>
+        <h2>A few homes we've transformed.</h2>
+        <p>Photo gallery — swap these placeholders for real install photos.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-photo reveal"><img src="images/images/gallery-rainbow.jpg" alt="Home lit in full rainbow color mode"><figcaption>Full spectrum color mode</figcaption></figure>
+        <figure class="gallery-photo reveal"><img src="images/images/gallery-cooltone.jpg" alt="Same home in cool white mode"><figcaption>Same home, cool white mode</figcaption></figure>
+        <figure class="gallery-photo reveal"><img src="images/images/gallery-christmas.jpg" alt="Home lit in red and green for the holidays"><figcaption>Holiday red &amp; green</figcaption></figure>
+        <figure class="gallery-photo reveal"><img src="images/images/gallery-patriotic.jpg" alt="Home lit in red, white and blue"><figcaption>Red, white &amp; blue</figcaption></figure>
+        <figure class="gallery-photo reveal"><img src="images/images/gallery-warmwhite-garage.jpg" alt="Stone home with warm white architectural lighting"><figcaption>Warm white, architectural</figcaption></figure>
+        <figure class="gallery-photo reveal"><img src="images/images/gallery-dusk-stucco.jpg" alt="Home with warm white roofline lighting at dusk"><figcaption>Everyday warm white</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>A simple, three-step process.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <div class="step-num">01</div>
+          <h3>Get your free quote</h3>
+          <p>Tell us about your home and we'll send a tailored quote — usually within 24 hours.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">02</div>
+          <h3>One-day install</h3>
+          <p>Our crew handles the whole install, typically in a single day. No need to clear your schedule.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">03</div>
+          <h3>Control it from your phone</h3>
+          <p>Set colors, brightness, and schedules right from the app — sunset to sunrise, automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="wrap">
+      <div class="features-grid">
+        <div>
+          <div class="section-head reveal" style="margin-bottom:28px;">
+            <span class="eyebrow">The System</span>
+            <h2>Everyday lighting. Holiday-ready in a tap.</h2>
+          </div>
+          <div class="feature-list">
+            <div class="feature-item reveal"><span class="ico">✦</span> Fully app-controlled</div>
+            <div class="feature-item reveal"><span class="ico">✦</span> Millions of color options</div>
+            <div class="feature-item reveal"><span class="ico">✦</span> Built-in holiday presets</div>
+            <div class="feature-item reveal"><span class="ico">✦</span> Adjustable brightness</div>
+            <div class="feature-item reveal"><span class="ico">✦</span> Sunset-to-sunrise timers</div>
+            <div class="feature-item reveal"><span class="ico">✦</span> Warm white everyday mode</div>
+          </div>
+        </div>
+        <div class="fixture-photo reveal">
+          <img src="images/images/fixture-closeup.jpg" alt="Close-up of the low-profile permanent lighting fixtures mounted under the eave">
+          <span class="fixture-caption">Low-profile fixtures, mounted under the eave — invisible by day</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Reviews</span>
+        <h2>What Portland &amp; Vancouver homeowners are saying.</h2>
+      </div>
+      <div class="review-grid">
+        <div class="review-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>We've had our lights up for six months now and it still feels like a splurge every time we switch them on. Install took one afternoon and the crew was super respectful of our landscaping.</p>
+          <div class="who">Megan R. — Beaverton, OR</div>
+        </div>
+        <div class="review-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>Best home improvement decision we've made. We do orange and black for Halloween, red and green for Christmas, and nobody in the neighborhood can figure out how we change it so fast.</p>
+          <div class="who">Dave T. — Vancouver, WA</div>
+        </div>
+        <div class="review-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>Quote was fast, install was faster, and the app is genuinely easy to use — even my parents can operate it. Worth every penny not to drag ladders out every December.</p>
+          <div class="who">Priya N. — Lake Oswego, OR</div>
+        </div>
+        <div class="review-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>Professional from the first call to the final walkthrough. They noticed a section of fascia that needed a repair before install and handled it without me having to ask.</p>
+          <div class="who">Chris B. — Tigard, OR</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info reveal">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Ready to light up your home?</h2>
+        <p>Send us a few details and we'll get back to you with a free quote — usually within 24 hours.</p>
+        <div class="contact-list">
+          <a href="mailto:pdxascendlighting@gmail.com">pdxascendlighting@gmail.com</a>
+          <a href="tel:+13608360572">(360) 836-0572</a>
+          <a href="https://www.instagram.com/pdxascendlighting/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61591960704583" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.tiktok.com/@pdxascendlighting" target="_blank" rel="noopener">TikTok</a>
+        </div>
+        <p class="service-area"><span class="eyebrow" style="display:block; margin-bottom:8px;">Service Area</span>Portland &amp; Vancouver metro — including Beaverton, Tigard, Sherwood, Tualatin, Lake Oswego, West Linn, Wilsonville, Happy Valley, Camas, Washougal, Salmon Creek, Battle Ground &amp; Ridgefield.</p>
+      </div>
+      <form class="reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <input type="text" name="first_name" placeholder="First name" required>
+          <input type="text" name="last_name" placeholder="Last name" required>
+        </div>
+        <div class="form-row">
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="tel" name="phone" placeholder="Phone number">
+        </div>
+        <textarea name="message" placeholder="Tell us about your home and what you're looking for..."></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <a href="#top" class="logo">
+      <img src="images/images/logo.png" alt="PDX Ascend Lighting" class="logo-img">
+    </a>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/pdxascendlighting/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      <a href="https://www.facebook.com/profile.php?id=61591960704583" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+      <a href="https://www.tiktok.com/@pdxascendlighting" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+      <a href="https://x.com/AscendLighting" target="_blank" rel="noopener" aria-label="X">X</a>
+      <a href="https://www.linkedin.com/in/pdx-ascend-lighting-532bb1421" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    </div>
+  </div>
+  <p class="footer-note">© 2026 PDX Ascend Lighting · Licensed &amp; insured · 5-year warranty · Portland &amp; Vancouver metro</p>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+  const headerEl = document.querySelector('header');
+  window.addEventListener('scroll', ()=>{
+    headerEl.classList.toggle('scrolled', window.scrollY > 12);
+  });
+</script>
+
+</body>
+</html>
